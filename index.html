@@ -1456,7 +1456,7 @@
 
 
         .countdown{
-            background:url('assets/images/bg-2.gif') fixed no-repeat center center / cover;
+            background:url('assets/images/bg-2.jpeg') fixed no-repeat center center / cover;
             position: relative;
             padding: 0 0 40px;
         }
@@ -1891,7 +1891,7 @@
         </amp-animation>
     <!-- Create target for AMP scroll back to top button right after opening <body> tag -->
   <span class="target">
-    <a class="target-anchor" id="top"></a>
+    <a href="/" class="target-anchor" id="top"></a>
     <amp-position-observer
       on="enter:hideAnim.start; exit:showAnim.start"
       layout="nodisplay">
@@ -1906,7 +1906,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                                 <span class="input-group-addon">
-                                    <button class="btn btn-info" type="button"> <i class="icon-search"></i> </button>
+                                    <button name="search-btn" class="btn btn-info" type="button"> <i class="icon-search"></i> </button>
                                 </span> 
                             </div>
                         </form>
@@ -1952,15 +1952,15 @@
                     <!-- /.search -->
                     <div class="dropdown language">
                         <div class="dropdown-toggler">
-                            <amp-img height="25" width="42" layout="intrinsic" src="assets/images/usa.png" class="img-responsive"></amp-img><i class="icon-angle-down"></i>
+                            <amp-img height="25" width="42" layout="intrinsic" src="assets/images/usa.png"  alt="flag-us" class="img-responsive"></amp-img><i class="icon-angle-down"></i>
                         </div>
                         <div class="dropdown-content">
                             <ul>
-                                <li><a href="https://www.bestessaywriting.com/uk/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" src="assets/images/eng.gif" class="img-responsive"></amp-img></a></li>
-                                <li><a href="https://www.bestessaywriting.com/au/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" src="assets/images/aus.gif" class="img-responsive"></amp-img></a></li>
-                                <li><a href="https://sg.bestessaywriting.com/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" src="assets/images/sig.gif" class="img-responsive"></amp-img></a></li>
-                                <li><a href="https://www.bestessaywriting.com/eu/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" src="assets/images/eur.gif" class="img-responsive"></amp-img></a></li>
-                                <li><a href="https://www.bestessaywriting.com/ca/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" src="assets/images/ca.png" class="img-responsive"></amp-img></a></li>
+                                <li><a href="https://www.bestessaywriting.com/uk/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" alt="flag-uk" src="assets/images/eng.gif" class="img-responsive"></amp-img></a></li>
+                                <li><a href="https://www.bestessaywriting.com/au/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" alt="flag-aus" src="assets/images/aus.gif" class="img-responsive"></amp-img></a></li>
+                                <li><a href="https://sg.bestessaywriting.com/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" alt="flag-sig" src="assets/images/sig.gif" class="img-responsive"></amp-img></a></li>
+                                <li><a href="https://www.bestessaywriting.com/eu/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" alt="flag-eu" src="assets/images/eur.gif" class="img-responsive"></amp-img></a></li>
+                                <li><a href="https://www.bestessaywriting.com/ca/" target="_blank"><amp-img height="25" width="42" layout="intrinsic" alt="flag-ca" src="assets/images/ca.png" class="img-responsive"></amp-img></a></li>
                             </ul>
                         </div>
                     </div>
@@ -2182,10 +2182,10 @@
         <!-- /.item -->
         
         <div class="buttons">
-            <span class="active" [class]="appState.bannerSlideIndex == 1?'active':''"  on="tap:AMP.setState({appState:{bannerSlideIndex: 1}})" tabindex="1" role="button"></span>
-            <span [class]="appState.bannerSlideIndex == 2?'active':''" on="tap:AMP.setState({appState:{bannerSlideIndex: 2}})" tabindex="2" role="button"></span>
-            <span [class]="appState.bannerSlideIndex == 3?'active':''" on="tap:AMP.setState({appState:{bannerSlideIndex: 3}})" tabindex="3" role="button"></span>
-            <span [class]="appState.bannerSlideIndex == 4?'active':''" on="tap:AMP.setState({appState:{bannerSlideIndex: 4}})" tabindex="4" role="button"></span>
+            <span class="active" [class]="appState.bannerSlideIndex == 1?'active':''"  on="tap:AMP.setState({appState:{bannerSlideIndex: 1}})" tabindex="0" role="button"></span>
+            <span [class]="appState.bannerSlideIndex == 2?'active':''" on="tap:AMP.setState({appState:{bannerSlideIndex: 2}})" tabindex="0" role="button"></span>
+            <span [class]="appState.bannerSlideIndex == 3?'active':''" on="tap:AMP.setState({appState:{bannerSlideIndex: 3}})" tabindex="0" role="button"></span>
+            <span [class]="appState.bannerSlideIndex == 4?'active':''" on="tap:AMP.setState({appState:{bannerSlideIndex: 4}})" tabindex="0" role="button"></span>
         </div>
        
     </div>
@@ -2276,22 +2276,22 @@
                                         <label for="currency" class="bold">Select currency</label>
                                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                             <div class="btn-group" role="group">
-                                                <button type="button" id="usa" class="btn btn-default act" [class]="appState.currency == 'usd'?'btn btn-default act':'btn btn-default'"  on="tap:AMP.setState({appState: {currency: 'usd', amount:12.95, symbol:'$'}})">USD</button>
+                                                <button  name="currency-btn" type="button" id="usa" class="btn btn-default act" [class]="appState.currency == 'usd'?'btn btn-default act':'btn btn-default'"  on="tap:AMP.setState({appState: {currency: 'usd', amount:12.95, symbol:'$'}})">USD</button>
                                             </div>
                                             <div class="btn-group" role="group">
-                                                <button type="button" id="england" class="btn btn-default" [class]="appState.currency == 'gbp'?'btn btn-default act':'btn btn-default'"  on="tap:AMP.setState({appState: {currency: 'gbp', amount:10.59, symbol:'₤'}})">GBP</button>
+                                                <button name="currency-btn" type="button" id="england" class="btn btn-default" [class]="appState.currency == 'gbp'?'btn btn-default act':'btn btn-default'"  on="tap:AMP.setState({appState: {currency: 'gbp', amount:10.59, symbol:'₤'}})">GBP</button>
                                             </div>
                                             <div class="btn-group" role="group">
-                                                <button type="button" id="australia" class="btn btn-default" [class]="appState.currency == 'aud'?'btn btn-default act':'btn btn-default'"   on="tap:AMP.setState({appState: {currency: 'aud', amount:18, symbol:'AU$'}})">AUD</button>
+                                                <button name="currency-btn" type="button" id="australia" class="btn btn-default" [class]="appState.currency == 'aud'?'btn btn-default act':'btn btn-default'"   on="tap:AMP.setState({appState: {currency: 'aud', amount:18, symbol:'AU$'}})">AUD</button>
                                             </div>
                                             <div class="btn-group" role="group">
-                                                <button type="button" id="singapore" class="btn btn-default" [class]="appState.currency == 'sgd'?'btn btn-default act':'btn btn-default'"   on="tap:AMP.setState({appState: {currency: 'sgd', amount:18.95, symbol:'S$'}})">SGD</button>
+                                                <button name="currency-btn" type="button" id="singapore" class="btn btn-default" [class]="appState.currency == 'sgd'?'btn btn-default act':'btn btn-default'"   on="tap:AMP.setState({appState: {currency: 'sgd', amount:18.95, symbol:'S$'}})">SGD</button>
                                             </div>
                                             <div class="btn-group" role="group">
-                                                <button type="button" id="europe" class="btn btn-default" [class]="appState.currency == 'eur'?'btn btn-default act':'btn btn-default'"   on="tap:AMP.setState({appState: {currency: 'eur', amount:12.59, symbol:'€'}})">EUR</button>
+                                                <button name="currency-btn" type="button" id="europe" class="btn btn-default" [class]="appState.currency == 'eur'?'btn btn-default act':'btn btn-default'"   on="tap:AMP.setState({appState: {currency: 'eur', amount:12.59, symbol:'€'}})">EUR</button>
                                             </div>
                                             <div class="btn-group" role="group">
-                                                <button type="button" id="canada" class="btn btn-default"  [class]="appState.currency == 'cad'?'btn btn-default act':'btn btn-default'"  on="tap:AMP.setState({appState: {currency: 'cad', amount:17.59, symbol:'$'}})">CAD</button>
+                                                <button name="currency-btn" type="button" id="canada" class="btn btn-default"  [class]="appState.currency == 'cad'?'btn btn-default act':'btn btn-default'"  on="tap:AMP.setState({appState: {currency: 'cad', amount:17.59, symbol:'$'}})">CAD</button>
                                             </div>
                                         </div>
                                     </div>
@@ -2341,11 +2341,11 @@
                                         <label for="Words">Pages or Words</label>
                                         <div class="input-group">
                                             <span class="input-group-btn">
-                                                <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[2]" on="tap:AMP.setState({appState: {currentValue: appState.currentValue == 1 ? 1 : appState.currentValue - 1} })" > - </button>
+                                                <button name="dec-btn" type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[2]" on="tap:AMP.setState({appState: {currentValue: appState.currentValue == 1 ? 1 : appState.currentValue - 1} })" > - </button>
                                             </span>
                                             <input type="text" name="quant[2]" readonly id="numbers" class="form-control text-center input-number" value="1" min="1" max="200" [value]="appState.currentValue">
                                             <span class="input-group-btn">
-                                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]" on="tap:AMP.setState({ appState:{ currentValue: appState.currentValue + 1 }})"> + </button>
+                                                <button name="add-btn" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]" on="tap:AMP.setState({ appState:{ currentValue: appState.currentValue + 1 }})"> + </button>
                                             </span> 
                                         </div>
                                     </div>
@@ -2383,7 +2383,7 @@
                                     <!-- /.form-group -->
                                     <hr/>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">Order Now</button>
+                                        <button name="order-btn" type="submit" class="btn btn-info">Order Now</button>
                                     </div>
                                 </form>
                             </div>
@@ -2556,9 +2556,9 @@
                             on="select:carouselPreview.goToSlide(index=event.targetOption)" 
                             layout="container"> 
                                 <ul id="carouselDots" class="dots"> 
-                                <li option="0" selected>Option A</li> 
-                                <li option="1">Option B</li> 
-                                <li option="2">Option C</li> 
+                                <li option="0" selected role="button" aria-index="1">Option A</li> 
+                                <li option="1"  role="button"  aria-index="2">Option B</li> 
+                                <li option="2"  role="button"  aria-index="3">Option C</li> 
 
                                 </ul> 
                           </amp-selector>
@@ -2658,10 +2658,10 @@
                             <!-- /.item-1 -->
 
                             <div class="countdown-arrows">
-                                <button class="countdown-button left"  on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 1 ? 3 :appState.currentCountdownSlideState-1}})">
+                                <button name="left-btn" class="countdown-button left"  on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 1 ? 3 :appState.currentCountdownSlideState-1}})">
                                     <i class="icon icon-left"></i>
                                 </button>
-                                <button class="countdown-button right" on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 3 ? 1 :appState.currentCountdownSlideState+1}})">
+                                <button name="right-btn" class="countdown-button right" on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 3 ? 1 :appState.currentCountdownSlideState+1}})">
                                     <i class="icon icon-right"></i>
                                 </button>
                             </div>
