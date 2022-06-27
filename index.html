@@ -1183,6 +1183,9 @@
             -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
             transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
         }
+        .form .form-control.nones{
+            display: none;
+        }
 
         .form .input-group {
             position: relative;
@@ -1879,6 +1882,7 @@
             "currentValue":1,
             "amount":12.95,
             "symbol":"$",
+            "urgency":1,
             "currentCountdownSlideState":1,
             "bannerSlideIndex":1,
             "searchVisible":false
@@ -2401,19 +2405,48 @@
                                     <!-- /.form-group -->
                                     <div class="form-group">
                                         <label for="urgency">Urgency</label>
-                                        <select class="form-control" name="urgency" id="urgency">
-                                            <option value="">Select...</option>
-                                            <option value="12.95">7 Days</option>
-                                            <option value="14.95">5 Days</option>
-                                            <option value="18.95">3 Days</option>
-                                            <option value="25.95">24 Hours</option>
+                                        <select class="form-control" name="urgency" id="urgency" on="input-debounced:AMP.setState({appState:{amount: event.value, urgency:event.value }})" [class]="appState.currency == 'usd'?'form-control':'form-control nones'">
+                                            <option value="12.95" [selected]="appState.urgency == 12.95">7 Days</option>
+                                            <option value="14.95" [selected]="appState.urgency == 14.95">5 Days</option>
+                                            <option value="18.95" [selected]="appState.urgency == 18.95">3 Days</option>
+                                            <option value="25.95" [selected]="appState.urgency == 25.95">24 Hours</option>
+                                        </select>
+                                        <select class="form-control nones" name="urgency" id="gbpurgency" on="change:AMP.setState({appState:{amount: event.value,  urgency:event.value }})" [class]="appState.currency == 'gbp'?'form-control':'form-control nones'" >
+                                            <option value="10.59" [selected]="appState.urgency == 10.95">7 Days</option>
+                                            <option value="12.59" [selected]="appState.urgency == 12.95">5 Days</option>
+                                            <option value="15.59" [selected]="appState.urgency == 15.95">3 Days</option>
+                                            <option value="20.95" [selected]="appState.urgency == 20.95">24 Hours</option>
+                                        </select>
+                                        <select class="form-control nones" name="urgency" id="audurgency" on="change:AMP.setState({appState:{amount: event.value,  urgency:event.value }})" [class]="appState.currency == 'aud'?'form-control':'form-control nones'">
+                                            <option value="18.00" [selected]="appState.urgency == 18.00">7 Days</option>
+                                            <option value="20.95" [selected]="appState.urgency == 20.95">5 Days</option>
+                                            <option value="26.59" [selected]="appState.urgency == 26.59">3 Days</option>
+                                            <option value="36.00" [selected]="appState.urgency == 36.00">24 Hours</option>
+                                        </select>
+                                        <select class="form-control nones" name="urgency" id="eururgency" on="change:AMP.setState({appState:{amount: event.value,  urgency:event.value }})" [class]="appState.currency == 'eur'?'form-control':'form-control nones'">
+                                            <option value="12.59" [selected]="appState.urgency == 12.59">7 Days</option>:
+                                            <option value="14.59" [selected]="appState.urgency == 14.59">5 Days</option>
+                                            <option value="17.95" [selected]="appState.urgency == 17.95">3 Days</option>
+                                            <option value="24.95" [selected]="appState.urgency == 24.95">24 Hours</option>
+                                        </select>
+                                        <select class="form-control nones" name="urgency"  on="change:AMP.setState({appState:{amount: event.value,  urgency:event.value }})" [class]="appState.currency == 'sgd'?'form-control':'form-control nones'">
+                                            <option value="18.95"  [selected]="appState.urgency == 18.95">7 Days</option>
+                                            <option value="21.95"  [selected]="appState.urgency == 21.95">5 Days</option>
+                                            <option value="27.59"  [selected]="appState.urgency == 27.95">3 Days</option>
+                                            <option value="37.95"  [selected]="appState.urgency == 37.95">24 Hours</option>
+                                        </select>
+                                        <select class="form-control nones" name="urgency" on="change:AMP.setState({appState:{amount: event.value,  urgency:event.value }})" [class]="appState.currency == 'cad'?'form-control':'form-control nones'">
+                                            <option value="17.59" [selected]="appState.urgency == 17.59">7 Days</option>
+                                            <option value="19.95" [selected]="appState.urgency == 19.95">5 Days</option>
+                                            <option value="25.59" [selected]="appState.urgency == 25.59">3 Days</option>
+                                            <option value="34.95" [selected]="appState.urgency == 34.95">24 Hours</option>
                                         </select>
                                     </div>
                                     <!-- /.form-group -->
                                     <hr/>
                                     <div class="form-group text-center" id="USD">
                                         <label class="label" for="total">Total Price <span [text]="appState.symbol">$</span></label>
-                                        <span  id="total_price" [text]="appState.currentValue*appState.amount">12.95</span>
+                                        <span  id="total_price" [text]="(appState.currentValue*appState.amount).toFixed(2)">12.95</span>
                                     </div>
                                     <!-- /.form-group -->
                                     <hr/>
