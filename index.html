@@ -61,6 +61,10 @@
      <!-- Add amp-position-observer and amp-animation -->
     <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
     <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style amp-boilerplate>
       body {
@@ -136,89 +140,7 @@
         }
 
 
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('assets/fonts/OpenSans-Light.eot');
-            src: url('assets/fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/OpenSans-Light.woff2') format('woff2'),
-                url('assets/fonts/OpenSans-Light.woff') format('woff'),
-                url('assets/fonts/OpenSans-Light.ttf') format('truetype');
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('assets/fonts/OpenSans-Bold.eot');
-            src: url('assets/fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/OpenSans-Bold.woff2') format('woff2'),
-                url('assets/fonts/OpenSans-Bold.woff') format('woff'),
-                url('assets/fonts/OpenSans-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('assets/fonts/OpenSans-ExtraBold.eot');
-            src: url('assets/fonts/OpenSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/OpenSans-ExtraBold.woff2') format('woff2'),
-                url('assets/fonts/OpenSans-ExtraBold.woff') format('woff'),
-                url('assets/fonts/OpenSans-ExtraBold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('assets/fonts/OpenSans-SemiBold.eot');
-            src: url('assets/fonts/OpenSans-SemiBold.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/OpenSans-SemiBold.woff2') format('woff2'),
-                url('assets/fonts/OpenSans-SemiBold.woff') format('woff'),
-                url('assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('assets/fonts/OpenSans-Regular.eot');
-            src: url('assets/fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/OpenSans-Regular.woff2') format('woff2'),
-                url('assets/fonts/OpenSans-Regular.woff') format('woff'),
-                url('assets/fonts/OpenSans-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('assets/fonts/OpenSans-Medium.eot');
-            src: url('assets/fonts/OpenSans-Medium.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/OpenSans-Medium.woff2') format('woff2'),
-                url('assets/fonts/OpenSans-Medium.woff') format('woff'),
-                url('assets/fonts/OpenSans-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Encode Sans Compressed';
-            src: url('assets/fonts/EncodeSansCompressed-ExtraBold.eot');
-            src: url('assets/fonts/EncodeSansCompressed-ExtraBold.eot?#iefix') format('embedded-opentype'),
-                url('assets/fonts/EncodeSansCompressed-ExtraBold.woff2') format('woff2'),
-                url('assets/fonts/EncodeSansCompressed-ExtraBold.woff') format('woff'),
-                url('assets/fonts/EncodeSansCompressed-ExtraBold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
+      
        *{
            margin:0;
            box-sizing: border-box;
@@ -429,7 +351,7 @@
        }
        .header-menu a{
             text-decoration: none;
-            font-family: Encode Sans Compressed, sans-serif;
+            font-family: 'Encode Sans Compressed', sans-serif;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: bold;
