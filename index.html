@@ -2767,10 +2767,10 @@
                             <!-- /.item-1 -->
 
                             <div class="countdown-arrows">
-                                <button name="left-btn" class="countdown-button left"  on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 1 ? 3 :appState.currentCountdownSlideState-1}})">
+                                <button name="leftbtn" class="countdown-button left"  on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 1 ? 3 :appState.currentCountdownSlideState-1}})">
                                     <i class="icon icon-left"></i>
                                 </button>
-                                <button name="right-btn" class="countdown-button right" on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 3 ? 1 :appState.currentCountdownSlideState+1}})">
+                                <button name="rightbtn" class="countdown-button right" on="tap:AMP.setState({appState:{currentCountdownSlideState:appState.currentCountdownSlideState == 3 ? 1 :appState.currentCountdownSlideState+1}})">
                                     <i class="icon icon-right"></i>
                                 </button>
                             </div>
@@ -2972,6 +2972,6 @@
     </footer>
     <!-- /.main-footer -->
 
-    <a  id="scrollToTopButton" on="tap:top.scrollTo(duration=500)" class="scrollToTop btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page"><span class="icon-up"></span></a>
+    <a  id="scrollToTopButton" on="tap:top.scrollTo(duration=500)" class="scrollToTop btn btn-primary btn-lg back-to-top" name="go to top" role="button" title="Click to return on the top page"><span class="icon-up"></span></a>
   </body>
 </html>
